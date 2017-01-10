@@ -1,8 +1,8 @@
 #!/bin/bash
 
-path=/var/log/openvpn/openvpn-status.log # path to openvpn status log
+path=/var/log/openvpn-status.log # path to openvpn status log
 
-users=`sed '/ROUTING TABLE/,$d' $path| sed 's/,.*//'| sed 1,3d` # array of certificate name
+users=`sudo sed '/ROUTING TABLE/,$d' $path| sed 's/,.*//'| sed 1,3d` # array of certificate name
 
 echo "{"
 echo "\"data\":["

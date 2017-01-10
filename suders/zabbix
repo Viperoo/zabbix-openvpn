@@ -1,0 +1,4 @@
+zabbix ALL=(ALL) NOPASSWD: /usr/bin/sed
+zabbix ALL=(ALL) NOPASSWD: /bin/cat /var/log/openvpn-status.log
+zabbix ALL=(ALL) NOPASSWD: /usr/bin/grep
+Defaults:zabbix        !requiretty

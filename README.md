@@ -1,4 +1,4 @@
-# zabbix-openvpn 
+# zabbix-openvpn
 Zabbix 3.0
 
 Script for OpenVPN users monitoring.
@@ -9,11 +9,15 @@ Setup:
 
 1)	 Copy the file discover_vpn.sh to any directory on the server were  OpenVPN  is(for example	/etc/zabbix/scripts/discover_vpn.sh ). In this file specify the path to directory where OpenVPN certificates are (line №3).
 
-2)	 Copy all lines from “zabbix_agentd.txt” file and paste to the end of zabbix agent  config (/etc/zabbix/zabbix_agentd.conf). Probably, will be necessary to change the path to  discover_vpn.sh. 
+2)	 Copy all lines from “zabbix_agentd.txt” file and paste to the end of zabbix agent  config (/etc/zabbix/zabbix_agentd.conf). Probably, will be necessary to change the path to  discover_vpn.sh.
 
-3)	 Import openvpn.xml to zabbix template.
+3)	 Copy suders/zabbix to `/etc/sudoers.d/zabbix`. Warning! This suders allow user zabbix to grep/sed any file on system. Think of this security.
 
-# zabbix-openvpn 
+4)	 Make sure openvpn server save logs to path `/var/log/openvpn-status.log`
+
+5)	 Import openvpn.xml to zabbix template.
+
+# zabbix-openvpn
 Zabbix 3.0
 
 Скрипт мониторинга пользователей OpenVPN.
@@ -24,8 +28,8 @@ Zabbix 3.0
 Установка:
 1)	скопировать файл discover_vpn.sh в любую директорию, на сервере с OpenVPN (например, /etc/zabbix/scripts/discover_vpn.sh)
 	в этом файле указать путь до папки с сетификатами OpenVPN (строка №3).
-	
+
 2)	из файла zabbix_agentd.txt скопировать все строки в конец конфига zabbix агента (по умолчанию, /etc/zabbix/zabbix_agentd.conf)
 	возможно потребуется изменить путь до discover_vpn.sh
-	
+
 3)	импортировать в zabbix шаблон openvpn.xml
